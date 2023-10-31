@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   account_service:
+    image: dropdatabase233/account_service
     build: ./account_service
     ports:
       - "8000:8000"
@@ -12,6 +13,7 @@ services:
       - backend_network
 
   analytics_service:
+    image: dropdatabase233/analytics_service
     build: ./analytics_service
     ports:
       - "3000:3000"
@@ -23,6 +25,7 @@ services:
       replicas: 3
 
   authentication_service:
+    image: dropdatabase233/authentication_service
     build: ./authentication_service
     ports:
       - "3001:3000"
@@ -34,6 +37,7 @@ services:
       replicas: 3
 
   authorization_service:
+    image: dropdatabase233/authorization_service
     build: ./authorization_service
     ports:
       - "3002:3000"
@@ -45,6 +49,7 @@ services:
       replicas: 3
 
   content_storage_service:
+    image: dropdatabase233/content_storage_service
     build: ./content_storage_service
     ports:
       - "3003:3000"
@@ -56,6 +61,7 @@ services:
       replicas: 3
 
   payment_gateway_service:
+    image: payment_gateway_service
     build: ./payment_gateway_service
     ports:
       - "3004:3000"
@@ -67,6 +73,7 @@ services:
       replicas: 3
 
   payment_service:
+    image: dropdatabase233/payment_service
     build: ./payment_service
     ports:
       - "3005:3000"
@@ -78,6 +85,7 @@ services:
       replicas: 3
 
   personalization_service:
+    image: dropdatabase233/personalization_service
     build: ./personalization_service
     ports:
       - "3006:3000"
@@ -89,6 +97,7 @@ services:
       replicas: 3
 
   rating_service:
+    image: dropdatabase233/rating_service
     build: ./rating_service
     ports:
       - "3007:3000"
@@ -100,6 +109,7 @@ services:
       replicas: 3
 
   stream_service:
+    image: dropdatabase233/stream_service
     build: ./stream_service
     ports:
       - "3008:3000"
@@ -111,6 +121,7 @@ services:
       replicas: 3
 
   subscription_service:
+    image: dropdatabase233/subscription_service
     build: ./subscription_service
     ports:
       - "3009:3000"
@@ -122,6 +133,7 @@ services:
       replicas: 3
 
   upload_service:
+    image: dropdatabase233/upload_service
     build: ./upload_service
     ports:
       - "3010:3000"
