@@ -1,9 +1,12 @@
 FROM node:latest
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
 
 COPY . .
-RUN npm install
 
 CMD [ "npm", "start" ]

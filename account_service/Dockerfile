@@ -1,9 +1,9 @@
-FROM node:latest
+FROM golang:latest
 
-# Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY . .
-RUN npm install
 
-CMD [ "npm", "start" ]
+RUN apt-get update && apt-get install -y sqlite3 && go build -o analytics main.go
+
+CMD [ "./analytics" ]
