@@ -14,8 +14,11 @@ services:
     build:
       context: ./analytics_service
     ports:
-      - "8000:8000"
+      - "3000:3000"
     volumes:
       - ./volumes/analytics_service
     networks:
       - backend_network
+
+networks:
+  backend_network:
