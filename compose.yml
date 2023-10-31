@@ -21,29 +21,92 @@ services:
   authentication_service:
     build: ./authentication_service
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
       - ./volumes/authentication_service:/app/database:ro
     networks:
       - backend_network
 
   authorization_service:
+    build: ./authorization_service
+    ports:
+      - "3002:3000"
+    volumes:
+      - ./volumes/authorization_service:/app/database:ro
+    networks:
+      - backend_network
 
   content_storage_service:
+    build: ./content_storage_service
+    ports:
+      - "3003:3000"
+    volumes:
+      - ./volumes/content_storage_service:/app/database:ro
+    networks:
+      - backend_network
 
   payment_gateway_service:
+    build: ./payment_gateway_service
+    ports:
+      - "3004:3000"
+    volumes:
+      - ./volumes/payment_gateway_service:/app/database:ro
+    networks:
+      - backend_network
 
   payment_service:
+    build: ./payment_service
+    ports:
+      - "3005:3000"
+    volumes:
+      - ./volumes/payment_service:/app/database:ro
+    networks:
+      - backend_network
 
   personalization_service:
+    build: ./personalization_service
+    ports:
+      - "3006:3000"
+    volumes:
+      - ./volumes/personalization_service:/app/database:ro
+    networks:
+      - backend_network
 
   rating_service:
+    build: ./rating_service
+    ports:
+      - "3007:3000"
+    volumes:
+      - ./volumes/rating_service:/app/database:ro
+    networks:
+      - backend_network
 
   stream_service:
+    build: ./stream_service
+    ports:
+      - "3008:3000"
+    volumes:
+      - ./volumes/stream_service:/app/database:ro
+    networks:
+      - backend_network
 
   subscription_service:
+    build: ./subscription_service
+    ports:
+      - "3009:3000"
+    volumes:
+      - ./volumes/subscription_service:/app/database:ro
+    networks:
+      - backend_network
 
   upload_service:
+    build: ./upload_service
+    ports:
+      - "3010:3000"
+    volumes:
+      - ./volumes/upload_service:/app/database:ro
+    networks:
+      - backend_network
 
 networks:
   backend_network:
