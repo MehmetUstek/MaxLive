@@ -1,8 +1,7 @@
 version: '3.8'
 services:
   account_service:
-    build:
-      context: ./account_service
+    build: ./account_service
     ports:
       - "8000:8000"
     volumes:
@@ -11,14 +10,40 @@ services:
       - backend_network
 
   analytics_service:
-    build:
-      context: ./analytics_service
+    build: ./analytics_service
     ports:
       - "3000:3000"
     volumes:
-      - ./volumes/analytics_service:/app:rw
+      - ./volumes/analytics_service:/app/database:rw
     networks:
       - backend_network
+
+  authentication_service:
+    build: ./authentication_service
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./volumes/authentication_service:/app/database:ro
+    networks:
+      - backend_network
+
+  authorization_service:
+
+  content_storage_service:
+
+  payment_gateway_service:
+
+  payment_service:
+
+  personalization_service:
+
+  rating_service:
+
+  stream_service:
+
+  subscription_service:
+
+  upload_service:
 
 networks:
   backend_network:
