@@ -6,6 +6,8 @@ services:
       - "8000:8000"
     volumes:
       - ./volumes/account_service:/app/database:rw
+    deploy:
+      replicas: 3
     networks:
       - backend_network
 
@@ -17,6 +19,8 @@ services:
       - ./volumes/analytics_service:/app/database:rw
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   authentication_service:
     build: ./authentication_service
@@ -26,6 +30,8 @@ services:
       - ./volumes/authentication_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   authorization_service:
     build: ./authorization_service
@@ -35,6 +41,8 @@ services:
       - ./volumes/authorization_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   content_storage_service:
     build: ./content_storage_service
@@ -44,6 +52,8 @@ services:
       - ./volumes/content_storage_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   payment_gateway_service:
     build: ./payment_gateway_service
@@ -53,6 +63,8 @@ services:
       - ./volumes/payment_gateway_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   payment_service:
     build: ./payment_service
@@ -62,6 +74,8 @@ services:
       - ./volumes/payment_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   personalization_service:
     build: ./personalization_service
@@ -71,6 +85,8 @@ services:
       - ./volumes/personalization_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   rating_service:
     build: ./rating_service
@@ -80,6 +96,8 @@ services:
       - ./volumes/rating_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   stream_service:
     build: ./stream_service
@@ -89,6 +107,8 @@ services:
       - ./volumes/stream_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   subscription_service:
     build: ./subscription_service
@@ -98,6 +118,8 @@ services:
       - ./volumes/subscription_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
   upload_service:
     build: ./upload_service
@@ -107,6 +129,8 @@ services:
       - ./volumes/upload_service:/app/database:ro
     networks:
       - backend_network
+    deploy:
+      replicas: 3
 
 networks:
   backend_network:
