@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 services:
   account_service:
     image: dropdatabase233/account_service
@@ -143,6 +143,24 @@ services:
       - backend_network
     deploy:
       replicas: 3
+
+  api_gateway_user_management:
+    image: dropdatabase233/api_gateway_user_management
+    build: ./api_gateway_user_management
+    ports:
+      - "3020:3000"
+
+  api_gateway_content_management:
+    image: dropdatabase233/api_gateway_content_management
+    build: ./api_gateway_content_management
+    ports:
+      - "3021:3000"
+
+  api_gateway_payment_service:
+    image: dropdatabase233/api_gateway_payment_service
+    build: ./api_gateway_payment_service
+    ports:
+      - "3022:3000"
 
 networks:
   backend_network:
