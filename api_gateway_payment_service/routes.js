@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-const subscriptionService = "http://localhost:3009"; // Subscription Service URL
-const accountService = "http://localhost:8000"; // Account Service URL
+const subscriptionService = "http://subscription_service:3009"; // Subscription Service URL
+const accountService = "http://account_service:8000"; // Account Service URL
 
-const analyticsService = "http://localhost:3000";
-const authorizationService = "http://localhost:3002";
-const paymentGatewayService = "http://localhost:3004";
+const analyticsService = "http://analytics_service:3000";
+const authorizationService = "http://authentication_service:3002";
+const paymentGatewayService = "http://payment_gateway_service:3004";
 
 router.get("/subscription_service", async (req, res) => {
   try {
