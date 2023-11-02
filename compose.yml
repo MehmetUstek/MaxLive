@@ -8,7 +8,7 @@ services:
     volumes:
       - ./volumes/account_service:/app/database:rw
     deploy:
-      replicas: 1
+      replicas: 3
     networks:
       - backend_network
 
@@ -34,7 +34,7 @@ services:
     networks:
       - backend_network
     deploy:
-      replicas: 1
+      replicas: 3
 
   authorization_service:
     image: dropdatabase233/authorization_service
@@ -46,7 +46,7 @@ services:
     networks:
       - backend_network
     deploy:
-      replicas: 1
+      replicas: 3
 
   content_storage_service:
     image: dropdatabase233/content_storage_service
