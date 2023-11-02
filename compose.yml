@@ -1,167 +1,173 @@
 version: "3.8"
 services:
   account_service:
-    image: dropdatabase233/account_service
+    # image: dropdatabase233/account_service
     build: ./account_service
     ports:
-      - "8000:8000"
+      - "0.0.0.0:8000:8000"
     volumes:
       - ./volumes/account_service:/app/database:rw
     deploy:
-      replicas: 3
+      replicas: 1
     networks:
       - backend_network
 
   analytics_service:
-    image: dropdatabase233/analytics_service
+    # image: dropdatabase233/analytics_service
     build: ./analytics_service
     ports:
-      - "3000:3000"
+      - "0.0.0.0:3000:3000"
     volumes:
       - ./volumes/analytics_service:/app/database:rw
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   authentication_service:
-    image: dropdatabase233/authentication_service
+    # image: dropdatabase233/authentication_service
     build: ./authentication_service
     ports:
-      - "3001:3000"
+      - "0.0.0.0:3001:3000"
     volumes:
       - ./volumes/authentication_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   authorization_service:
-    image: dropdatabase233/authorization_service
+    # image: dropdatabase233/authorization_service
     build: ./authorization_service
     ports:
-      - "3002:3000"
+      - "0.0.0.0:3002:3000"
     volumes:
       - ./volumes/authorization_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   content_storage_service:
-    image: dropdatabase233/content_storage_service
+    # image: dropdatabase233/content_storage_service
     build: ./content_storage_service
     ports:
-      - "3003:3000"
+      - "0.0.0.0:3003:3000"
     volumes:
       - ./volumes/content_storage_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   payment_gateway_service:
-    image: payment_gateway_service
+    # image: dropdatabase233/payment_gateway_service
     build: ./payment_gateway_service
     ports:
-      - "3004:3000"
+      - "0.0.0.0:3004:3000"
     volumes:
       - ./volumes/payment_gateway_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   payment_service:
-    image: dropdatabase233/payment_service
+    # image: dropdatabase233/payment_service
     build: ./payment_service
     ports:
-      - "3005:3000"
+      - "0.0.0.0:3005:3000"
     volumes:
       - ./volumes/payment_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   personalization_service:
-    image: dropdatabase233/personalization_service
+    # image: dropdatabase233/personalization_service
     build: ./personalization_service
     ports:
-      - "3006:3000"
+      - "0.0.0.0:3006:3000"
     volumes:
       - ./volumes/personalization_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   rating_service:
-    image: dropdatabase233/rating_service
+    # image: dropdatabase233/rating_service
     build: ./rating_service
     ports:
-      - "3007:3000"
+      - "0.0.0.0:3007:3000"
     volumes:
       - ./volumes/rating_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   stream_service:
-    image: dropdatabase233/stream_service
+    # image: dropdatabase233/stream_service
     build: ./stream_service
     ports:
-      - "3008:3000"
+      - "0.0.0.0:3008:3000"
     volumes:
       - ./volumes/stream_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   subscription_service:
-    image: dropdatabase233/subscription_service
+    # image: dropdatabase233/subscription_service
     build: ./subscription_service
     ports:
-      - "3009:3000"
+      - "0.0.0.0:3009:3000"
     volumes:
       - ./volumes/subscription_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   upload_service:
-    image: dropdatabase233/upload_service
+    # image: dropdatabase233/upload_service
     build: ./upload_service
     ports:
-      - "3010:3000"
+      - "0.0.0.0:3010:3000"
     volumes:
       - ./volumes/upload_service:/app/database:ro
     networks:
       - backend_network
     deploy:
-      replicas: 3
+      replicas: 1
 
   api_gateway_user_management:
-    image: dropdatabase233/api_gateway_user_management
+    # image: dropdatabase233/api_gateway_user_management
     build: ./api_gateway_user_management
     ports:
-      - "3020:3000"
+      - "0.0.0.0:3020:3000"
+    networks:
+      - backend_network
 
   api_gateway_content_management:
-    image: dropdatabase233/api_gateway_content_management
+    # image: dropdatabase233/api_gateway_content_management
     build: ./api_gateway_content_management
     ports:
-      - "3021:3000"
+      - "0.0.0.0:3021:3000"
+    networks:
+      - backend_network
 
   api_gateway_payment_service:
-    image: dropdatabase233/api_gateway_payment_service
+    # image: dropdatabase233/api_gateway_payment_service
     build: ./api_gateway_payment_service
     ports:
-      - "3022:3000"
+      - "0.0.0.0:3022:3000"
+    networks:
+      - backend_network
 
 networks:
   backend_network:
-    driver: overlay
+    driver: bridge

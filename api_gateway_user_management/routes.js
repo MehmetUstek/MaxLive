@@ -4,7 +4,7 @@ const axios = require("axios");
 
 router.get("/subscription_service", async (req, res) => {
   try {
-    const response = await axios.get("http://subscription_service:3009/");
+    const response = await axios.get("http://subscription_service:3000/");
     res.json({
       message: "Response from Subscription Service",
       dataFromService2: response.data,

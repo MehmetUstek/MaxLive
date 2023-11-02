@@ -1,5 +1,5 @@
 {
-  "name": "api_gateway_user_management",
+  "name": "api_gateway_content_management",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",

@@ -4,18 +4,17 @@ const axios = require("axios");
 const CircuitBreaker = require("opossum");
 const routes = require("./routes");
 
-// Implements Circuit Breaking and API Gateway
-const subscriptionService = "http://localhost:3009"; // Subscription Service URL
-const accountService = "http://localhost:8000"; // Account Service URL
+const subscriptionService = "http://subscription_service:3000"; // Subscription Service URL
+const accountService = "http://account_service:8000"; // Account Service URL
 
-const analyticsService = "http://localhost:3000";
-const authorizationService = "http://localhost:3002";
-const contentStorageService = "http://localhost:3003";
-const paymentGatewayService = "http://localhost:3004";
-const personalizationService = "http://localhost:3006";
-const ratingService = "http://localhost:3007";
-const streamService = "http://localhost:3008";
-const uploadService = "http://localhost:3010";
+const analyticsService = "http://analytics_service:3000";
+const authorizationService = "http://authorization_service:3000";
+const contentStorageService = "http://content_storage_service:3000";
+const paymentGatewayService = "http://payment_gateway_service:3000";
+const personalizationService = "http://personalization_service:3000";
+const ratingService = "http://rating_service:3000";
+const streamService = "http://stream_service:3000";
+const uploadService = "http://upload_service:3000";
 
 // Circuit Breaker Configuration
 const circuitBreakerOptions = {

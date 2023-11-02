@@ -5,11 +5,12 @@ const CircuitBreaker = require("opossum");
 const routes = require("./routes");
 
 // Implements Circuit Breaking and API Gateway
-const subscriptionService = "http://localhost:3009"; // Subscription Service URL
-const accountService = "http://localhost:8000"; // Account Service URL
-const analyticsService = "http://localhost:3000";
-const authorizationService = "http://localhost:3002";
-const paymentGatewayService = "http://localhost:3004";
+const subscriptionService = "http://subscription_service:3000"; // Subscription Service URL
+const accountService = "http://account_service:8000"; // Account Service URL
+
+const analyticsService = "http://analytics_service:3000";
+const authorizationService = "http://authentication_service:3000";
+const paymentGatewayService = "http://payment_gateway_service:3000";
 
 // Circuit Breaker Configuration
 const circuitBreakerOptions = {

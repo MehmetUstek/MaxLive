@@ -1,5 +1,5 @@
 {
-  "name": "account_service",
+  "name": "content_storage_service",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
