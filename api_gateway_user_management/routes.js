@@ -17,7 +17,7 @@ router.get("/subscription_service", async (req, res) => {
 
 router.get("/account_service", async (req, res) => {
   try {
-    const response = await axios.get("http://account_service:8000/");
+    const response = await axios.get("http://account_service:3080/");
     res.json({
       message: "Response from Account Service",
       dataFromService2: response.data,

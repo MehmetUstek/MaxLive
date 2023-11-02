@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 
 const subscriptionService = "http://subscription_service:3000"; // Subscription Service URL
-const accountService = "http://account_service:8000"; // Account Service URL
+const accountService = "http://account_service:3080"; // Account Service URL
 
 const analyticsService = "http://analytics_service:3000";
 const authorizationService = "http://authorization_service:3000";

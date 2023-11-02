@@ -6,7 +6,7 @@ const routes = require("./routes");
 
 // Implements Circuit Breaking and API Gateway
 const subscriptionService = "http://subscription_service:3000"; // Subscription Service URL
-const accountService = "http://account_service:8000"; // Account Service URL
+const accountService = "http://account_service:3080"; // Account Service URL
 
 const analyticsService = "http://analytics_service:3000";
 const authorizationService = "http://authentication_service:3000";

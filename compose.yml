@@ -4,9 +4,7 @@ services:
     image: dropdatabase233/account_service
     build: ./account_service
     ports:
-      - "8000:8000"
-    volumes:
-      - ./volumes/account_service:/app/database:rw
+      - "3080:8000"
     deploy:
       replicas: 3
     networks:
@@ -17,8 +15,6 @@ services:
     build: ./analytics_service
     ports:
       - "3000:3000"
-    volumes:
-      - ./volumes/analytics_service:/app/database:rw
     networks:
       - backend_network
     deploy:
@@ -29,8 +25,6 @@ services:
     build: ./authentication_service
     ports:
       - "3001:3000"
-    volumes:
-      - ./volumes/authentication_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -41,8 +35,6 @@ services:
     build: ./authorization_service
     ports:
       - "3002:3000"
-    volumes:
-      - ./volumes/authorization_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -53,8 +45,6 @@ services:
     build: ./content_storage_service
     ports:
       - "3003:3000"
-    volumes:
-      - ./volumes/content_storage_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -65,8 +55,6 @@ services:
     build: ./payment_gateway_service
     ports:
       - "3004:3000"
-    volumes:
-      - ./volumes/payment_gateway_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -77,8 +65,6 @@ services:
     build: ./payment_service
     ports:
       - "3005:3000"
-    volumes:
-      - ./volumes/payment_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -89,8 +75,6 @@ services:
     build: ./personalization_service
     ports:
       - "3006:3000"
-    volumes:
-      - ./volumes/personalization_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -101,8 +85,6 @@ services:
     build: ./rating_service
     ports:
       - "3007:3000"
-    volumes:
-      - ./volumes/rating_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -113,8 +95,6 @@ services:
     build: ./stream_service
     ports:
       - "3008:3000"
-    volumes:
-      - ./volumes/stream_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -125,8 +105,6 @@ services:
     build: ./subscription_service
     ports:
       - "3009:3000"
-    volumes:
-      - ./volumes/subscription_service:/app/database:ro
     networks:
       - backend_network
     deploy:
@@ -137,8 +115,6 @@ services:
     build: ./upload_service
     ports:
       - "3010:3000"
-    volumes:
-      - ./volumes/upload_service:/app/database:ro
     networks:
       - backend_network
     deploy:
