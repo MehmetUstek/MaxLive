@@ -48,7 +48,9 @@ services:
     networks:
       - backend_network
     deploy:
-      replicas: 1
+      replicas: 3
+      # placement:
+      #   constraints: [node.labels.type == queue]
 
   payment_gateway_service:
     image: dropdatabase233/payment_gateway_service
@@ -58,7 +60,7 @@ services:
     networks:
       - backend_network
     deploy:
-      replicas: 1
+      replicas: 3
 
   payment_service:
     image: dropdatabase233/payment_service
@@ -68,7 +70,7 @@ services:
     networks:
       - backend_network
     deploy:
-      replicas: 1
+      replicas: 3
 
   personalization_service:
     image: dropdatabase233/personalization_service
