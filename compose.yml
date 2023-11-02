@@ -7,6 +7,8 @@ services:
       - "3080:8000"
     deploy:
       replicas: 3
+      restart_policy:
+        condition: any
     networks:
       - backend_network
 
@@ -19,6 +21,8 @@ services:
       - backend_network
     deploy:
       replicas: 1
+      restart_policy:
+        condition: any
 
   authentication_service:
     image: dropdatabase233/authentication_service
@@ -29,6 +33,8 @@ services:
       - backend_network
     deploy:
       replicas: 3
+      restart_policy:
+        condition: any
 
   authorization_service:
     image: dropdatabase233/authorization_service
@@ -39,6 +45,8 @@ services:
       - backend_network
     deploy:
       replicas: 3
+      restart_policy:
+        condition: any
 
   content_storage_service:
     image: dropdatabase233/content_storage_service
@@ -49,6 +57,8 @@ services:
       - backend_network
     deploy:
       replicas: 3
+      restart_policy:
+        condition: any
       # placement:
       #   constraints: [node.labels.type == queue]
 
@@ -61,6 +71,8 @@ services:
       - backend_network
     deploy:
       replicas: 3
+      restart_policy:
+        condition: any
 
   payment_service:
     image: dropdatabase233/payment_service
@@ -71,6 +83,8 @@ services:
       - backend_network
     deploy:
       replicas: 3
+      restart_policy:
+        condition: any
 
   personalization_service:
     image: dropdatabase233/personalization_service
@@ -81,6 +95,8 @@ services:
       - backend_network
     deploy:
       replicas: 1
+      restart_policy:
+        condition: any
 
   rating_service:
     image: dropdatabase233/rating_service
@@ -91,6 +107,8 @@ services:
       - backend_network
     deploy:
       replicas: 1
+      restart_policy:
+        condition: any
 
   stream_service:
     image: dropdatabase233/stream_service
@@ -101,6 +119,8 @@ services:
       - backend_network
     deploy:
       replicas: 1
+      restart_policy:
+        condition: any
 
   subscription_service:
     image: dropdatabase233/subscription_service
@@ -111,6 +131,8 @@ services:
       - backend_network
     deploy:
       replicas: 1
+      restart_policy:
+        condition: any
 
   upload_service:
     image: dropdatabase233/upload_service
@@ -121,6 +143,8 @@ services:
       - backend_network
     deploy:
       replicas: 1
+      restart_policy:
+        condition: any
 
   api_gateway_user_management:
     image: dropdatabase233/api_gateway_user_management
@@ -129,6 +153,7 @@ services:
       - "3020:3000"
     networks:
       - backend_network
+    restart: always
 
   api_gateway_content_management:
     image: dropdatabase233/api_gateway_content_management
@@ -137,6 +162,7 @@ services:
       - "3021:3000"
     networks:
       - backend_network
+    restart: always
 
   api_gateway_payment_service:
     image: dropdatabase233/api_gateway_payment_service
@@ -145,6 +171,7 @@ services:
       - "3022:3000"
     networks:
       - backend_network
+    restart: always
 
 networks:
   backend_network:
