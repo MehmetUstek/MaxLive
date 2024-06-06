@@ -21,3 +21,15 @@ curl localhost:3020/subscription service
 # Compose.yml
 
 Because of our RAM restrictions, our compose file is only replicates one of the services.
+
+# Domains of the System
+
+<img src="DDD.drawio-3.svg" alt="Domains of the System" style="width:50%;">
+
+# Bounded Context Diagram for the System
+
+<img src="DDD.drawio.svg" alt="Bounded Context Diagram for the System" style="width:80%;">
+
+# Domain Driven Design Diagram for the System
+
+<img src="DDD.drawio-2.svg" alt="Domain Driven Design Diagram for the System" style="width:90%;">
